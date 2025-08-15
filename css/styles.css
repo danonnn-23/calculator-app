@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(255, 165, 180);
+    background-color: #222831;
 }
 
 .navigation ul {
@@ -10,8 +10,8 @@ body {
     height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    color: rgb(100, 100, 100);
+    background-color: #393E46;
+    color: rgb(184, 184, 184);
     border-radius: 50px;
     box-shadow: 4px 7px 10px rgba(0,0,0,0.3);
     animation: flyUpNavigation 2s ease-out forwards;
@@ -29,12 +29,12 @@ body {
         color: transparent;
     }
     75% {
-        color: rgb(100, 100, 100);
+        color: rgb(184, 184, 184);
     }
     100% {
         gap: 40px;
         width: 60vw;
-        color: rgb(100, 100, 100);
+        color: rgb(184, 184, 184);
     }
 }
 
@@ -53,25 +53,46 @@ body {
 
 .navigation ul li {
     cursor: pointer;
-    padding: 3px;
+    padding: 3px 5px;
     border-radius: 50px;
     transition: all 0.5s ease;
+    position: relative; /* Для абсолютного позиціонування лінії */
+}
+
+.navigation ul li::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 3%;
+    right: 3%;
+    bottom: 0;
+    height: 3px;
+    background: #DFD0B8;
+    border-radius: 2px;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
 }
 
 .navigation ul li:hover {
-    color: rgb(0, 0, 0);
-    background: rgb(255, 104, 129);
+    color: rgb(255, 255, 255);
+    background-color: transparent; /* Прибираємо зміну фону */
+}
+
+.navigation ul li:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
 .menu {
-    background-color: rgb(255, 255, 255);
+    background-color: #393E46;
     width: 74%;
     padding-top: 3vh;
     padding-bottom: 3vh;
     margin-left: 13%;
     border-radius: 50px;
     box-shadow: 4px 7px 10px rgba(0,0,0,0.3);
-    margin-top: 60px;
+    margin-top: 15vh;
 }
 
 .menu ul {
@@ -87,7 +108,8 @@ body {
 
 .menu ul li {
     padding: 5px 10px;
-    background-color: rgb(255, 165, 180);
+    background-color: #948979;
+    color: white;
     width: 18vw;
     height: 10vh;
     font-family: "Nunito", sans-serif;
@@ -99,5 +121,22 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50px;
+    cursor: pointer;
     box-shadow: 4px 7px 10px rgba(0,0,0,0.3);
+    transition: all 0.5s ease;
+}
+
+.menu ul li:hover {
+    background-color: #DFD0B8;
+    color: rgb(46, 46, 46);
+    box-shadow: 6px 9px 10px rgba(0,0,0,0.3);
+}
+
+.active-nav-btn  {
+    color: rgb(255, 255, 255);
+}
+
+.navigation ul li.active-nav-btn::after {
+    opacity: 1;
+    transform: scaleX(1);
 }
