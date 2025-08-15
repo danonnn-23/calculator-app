@@ -2,7 +2,7 @@ body {
     background-color: rgb(255, 165, 180);
 }
 
-nav ul {
+.navigation ul {
     display: flex;
     list-style: none;
     padding: 0;
@@ -61,4 +61,43 @@ nav ul {
 .navigation ul li:hover {
     color: rgb(0, 0, 0);
     background: rgb(255, 104, 129);
+}
+
+.menu {
+    background-color: rgb(255, 255, 255);
+    width: 74%;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    margin-left: 13%;
+    border-radius: 50px;
+    box-shadow: 4px 7px 10px rgba(0,0,0,0.3);
+    margin-top: 60px;
+}
+
+.menu ul {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); /* 3 ряди */
+    grid-auto-flow: column;              /* Заповнення по стовпцях */
+    gap: 50px;                           /* Відстань між елементами */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-items: center;
+}
+
+.menu ul li {
+    padding: 5px 10px;
+    background-color: rgb(255, 165, 180);
+    width: 18vw;
+    height: 10vh;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 140%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 4px 7px 10px rgba(0,0,0,0.3);
 }
